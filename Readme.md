@@ -1,10 +1,19 @@
+<<<<<<< HEAD
 Welcome to the official source code for the Agang SA website — a digital platform designed to promote social, political, and community engagement in South Africa.
 
 This project was developed as part of a Portfolio of Evidence (POE) to demonstrate skills in web development, content research, and sourcing.
+=======
+# 🌍 Agang SA Website
+
+Welcome to the official source code for the **Agang SA** website — a digital platform designed to promote **social, political, and community engagement in South Africa**.  
+
+This project was developed as part of a Portfolio of Evidence (POE) to demonstrate skills in **web development, content research, and sourcing**.
+>>>>>>> 5f68d170bd61364c86e4cf43c3082b0a7f6d2444
 
 📖 About the Project
 The Agang SA Website serves as a central hub where users can:
 
+<<<<<<< HEAD
 Learn about the mission, vision, and values of Agang SA.
 Access updates through the News & Blog section.
 Explore ongoing campaigns and social initiatives.
@@ -20,6 +29,34 @@ HTML5 – structure and semantic markup
 CSS3 – modern, responsive styling
 JavaScript (Vanilla JS) – interactivity and dynamic features
 📁 Project Structure
+=======
+## 📖 About the Project
+
+The **Agang SA Website** serves as a central hub where users can:  
+- Learn about the **mission, vision, and values** of Agang SA.  
+- Access updates through the **News & Blog** section.  
+- Explore **ongoing campaigns** and social initiatives.  
+- Find ways to **get involved** as a volunteer or supporter.  
+- Make **donations** to support the movement.  
+- Reach out via the **Contact Us** page.  
+
+The website is **fully responsive**, ensuring accessibility across desktop, tablet, and mobile devices.  
+
+---
+
+## 🛠️ Technologies Used
+
+The website was built using modern web development technologies:  
+- **HTML5** – structure and semantic markup  
+- **CSS3** – modern, responsive styling  
+- **JavaScript (Vanilla JS)** – interactivity and dynamic features  
+
+---
+
+## 📁 Project Structure
+
+```bash
+>>>>>>> 5f68d170bd61364c86e4cf43c3082b0a7f6d2444
 project-folder/
 │
 ├── index.html           # Homepage
@@ -36,4 +73,9 @@ project-folder/
 ├── js/
 │   └── script.js        # JavaScript functionality
 │
+<<<<<<< HEAD
 └── README.md            # Documentation file
+=======
+└── README.md            # Documentation file
+
+>>>>>>> 5f68d170bd61364c86e4cf43c3082b0a7f6d2444
