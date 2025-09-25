@@ -1,44 +1,87 @@
-<!DOCTYPE html> 
-<!--Declaration of the document type and version of HTML-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donate | Agang SA</title>    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--Start of ther Body content-->
-
+    <!-- HEADER -->
     <header>
-        <!--Navigation bar for the website-->
-        <nav>
-            <ul>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="news.html">News</a>
-                <a href="campaign.html">Campaign</a>
-                <a href="getinvolved.html">Get Involved</a>
-                <a href="donate.html">Donate</a>
-                <a href="contact.html">Contact Us</a>
-            </ul>
-        </nav>  
-    </header>   
+        <nav class="navbar">
+                        <div class="logo"><a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a></div>
 
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="campaign.html">Campaign</a></li>
+                <li><a href="getinvolved.html">Get Involved</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <!-- MAIN CONTENT -->
     <main>
-        <!--Main content of the page-->
         <h1>Support Our Cause</h1>
         <div class="donate-content">
-            <h2>Why Donate?</h2>
-            <p>Your contributions help us continue our work in the community, providing essential services and support to those in need.</p>
 
-            <h2>How to Donate</h2>
-            <p>You can make a one-time donation or set up a recurring contribution. Every little bit helps us achieve our goals.</p>
+            <!-- WHY DONATE -->
+            <section class="why-donate">
+                <h2>Why Donate?</h2>
+                <p>Your contributions help Agang SA continue its mission to empower communities, promote equality, and create positive change across South Africa.</p>
+                <ul>
+                    <li>Fund education and mentorship programs for youth.</li>
+                    <li>Support community health initiatives and mobile clinics.</li>
+                    <li>Enable campaigns for social justice and transparency.</li>
+                    <li>Invest in skills training and economic empowerment projects.</li>
+                </ul>
+            </section>
 
-            <h2>Thank You!</h2>
-            <p>We appreciate your generosity and support. Together, we can make a difference.</p>
+            <!-- HOW TO DONATE -->
+            <section class="how-to-donate">
+                <h2>How to Donate</h2>
+                <p>You can choose a donation option that suits you. Every contribution helps us make a real impact:</p>
+                <ul>
+                    <li><strong>One-Time Donation:</strong> A single contribution to support ongoing projects.</li>
+                    <li><strong>Monthly Contribution:</strong> Help sustain long-term initiatives with recurring support.</li>
+                    <li><strong>Corporate Sponsorship:</strong> Partner with us to maximize impact and reach more communities.</li>
+                </ul>
+                <p>Donations can be made via:</p>
+                <ul>
+                    <li>Bank Transfer: Account details available upon request.</li>
+                    <li>Credit/Debit Card Online Payment.</li>
+                    <li>Mobile Payments (e.g., SnapScan, PayFast).</li>
+                </ul>
+                <a href="payment.html" class="btn">Donate Now</a>
+            </section>
+
+            <!-- IMPACT STATEMENT -->
+            <section class="impact">
+                <h2>Your Impact</h2>
+                <p>Every donation directly contributes to projects that make a difference:</p>
+                <ul>
+                    <li>R100 provides school supplies for a student for a month.</li>
+                    <li>R500 helps run a community skills workshop.</li>
+                    <li>R1000 supports a mobile health clinic visit in a rural area.</li>
+                </ul>
+            </section>
+
+            <!-- THANK YOU MESSAGE -->
+            <section class="thank-you">
+                <h2>Thank You!</h2>
+                <p>We deeply appreciate your generosity. By donating, you are joining thousands of others who are committed to building a better, fairer, and more empowered South Africa.</p>
+            </section>
+
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 Agang SA. All rights reserved.</p>
-    </footer> 
+    </footer>
+</body>
+</html>

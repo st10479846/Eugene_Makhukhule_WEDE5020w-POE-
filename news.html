@@ -1,49 +1,71 @@
 <!DOCTYPE html>
-<!--Declaration of the document type and version of HTML-->
-<html lang="en">    </html> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>News | Agang SA</title>
 </head>
-<body>  
-    <!--Start of the Body content-->
+<body>
+    <!-- HEADER -->
     <header>
-        <nav>
-            <ul>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="news.html">News</a>
-                <a href="campaign.html">Campaign</a>
-                <a href="getinvolved.html">Get Involved</a>
-                <a href="donate.html">Donate</a>
-                <a href="contact.html">Contact Us</a>
+        <nav class="navbar">
+                        <div class="logo"><a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a></div>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="campaign.html">Campaign</a></li>
+                <li><a href="getinvolved.html">Get Involved</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
-        </nav>  
-    </header>   
-    <!--Blog content of the Page-->
-    <article class="blog-post">
-       <h1>Title of the Blog Post</h1>
-      <p class="meta">Posted on August 7, 2025 by <strong>Author Name</strong></p>
-    
-    <img src="blog-image.jpg" alt="Description of blog image">
-    
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel turpis nec mi vestibulum tempus. 
-    Nullam porta ante eget neque facilisis, at luctus nunc fringilla. Integer et lorem sit amet erat tincidunt 
-    fermentum. Aliquam erat volutpat.</p>
+        </nav>
+    </header>  
 
-    <p>Suspendisse potenti. Aenean gravida sem nec turpis dignissim, non porttitor lorem malesuada. 
-    Curabitur feugiat justo at enim facilisis, non placerat metus consequat. Nulla facilisi.</p>
+    <!-- MAIN CONTENT -->
+    <main class="news-listing">
+        <h1>Latest News</h1>
 
-    <p>Praesent a lorem vel lacus sollicitudin iaculis non ut lacus. Quisque nec sodales odio. 
-    Donec et justo eget sapien vehicula laoreet. Morbi non nisl id justo feugiat sagittis.</p>
-</article>
+        <div class="news-grid">
+            <article class="news-card">
+                <img src="_images/news1.png" alt="News Image 1">
+                <h3>Agang SA Launches New Campaign</h3>
+                <p class="meta">Posted on September 20, 2025</p>
+                <p>Join us as we unveil our latest initiatives aimed at improving the lives of South Africans.</p>
+                <a href="news-post.html" class="btn">Read More</a>
+            </article>
 
+            <article class="news-card">
+                <img src="_images/news1.png" alt="News Image 2">
+                <h3>Community Outreach Program Success</h3>
+                <p class="meta">Posted on September 18, 2025</p>
+                <p>Our recent outreach program has made a significant impact in local communities.</p>
+                <a href="news-post.html" class="btn">Read More</a>
+            </article>
+
+            <article class="news-card">
+                <img src="_images/news3.png" alt="News Image 3">
+                <h3>Policy Initiative: Education for All</h3>
+                <p class="meta">Posted on September 15, 2025</p>
+                <p>Agang SA continues to push for equal access to education for every child in South Africa.</p>
+                <a href="news-post.html" class="btn">Read More</a>
+            </article>
+
+            <article class="news-card">
+                <img src="_images/news3.png" alt="News Image 4">
+                <h3>Healthcare Program Expansion</h3>
+                <p class="meta">Posted on September 10, 2025</p>
+                <p>We are expanding our healthcare initiatives to reach more communities in need.</p>
+                <a href="news-post.html" class="btn">Read More</a>
+            </article>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 Agang SA. All rights reserved.</p>
-    </footer>   
-
-    <!--End of the Body content-->
-    
+    </footer>
 </body>
 </html>

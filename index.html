@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!--Declars the document type and version of HTML-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,37 +8,116 @@
     <meta name="description" content="Agang SA is a political party dedicated to building a better future for all South Africans. Join us in our mission to create positive change.">
     <meta name="keywords" content="Agang SA, political party, South Africa, future, change, democracy, community, involvement">
     <meta name="author" content="Agang SA Team">
-
 </head>
 
-
-<!--Start of the Body-->
 <body>
+    <!-- HEADER -->
     <header>
-        <nav>
-            <ul>
-
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="news.html">News</a>
-                <a href="campaign.html">campaign</a>
-                <a href="getinvolved.html">Get Involved</a>
-                <a href="donate.html">Donate</a>
-                <a href="contact.html">Contact Us</a>
+        <nav class="navbar">
+            <div class="logo"><a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="campaign.html">Campaign</a></li>
+                <li><a href="getinvolved.html">Get Involved</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
-        </nav>  
-        
-       
+        </nav>
     </header>  
-    
-     <main class="home-page">
-        
-     </main>
 
-<footer>
-    &copy; 2025 Agang SA. All rights reserved.
-</footer>
-    <!--Link to JavaScript File-->
+    <!-- HERO Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Building the Future Together</h1>
+            <p>Agang SA is committed to creating a South Africa that works for everyone. Join us in driving positive change, equality, and progress.</p>
+            <div class="hero-buttons">
+                <a href="getinvolved.html" class="btn btn-primary">Get Involved</a>
+                <a href="donate.html" class="btn btn-secondary">Donate Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="home-page">
+
+        <!-- Mission Statement -->
+        <section class="mission">
+            <h2>Our Mission</h2>
+            <p>We believe in unity, accountability, and empowering communities. Agang SA works tirelessly to promote democracy, social justice, and opportunities for all South Africans.</p>
+        </section>
+
+        <!-- Key Highlights -->
+        <section class="highlights">
+            <h2>Our Priorities</h2>
+            <div class="highlights-grid">
+                <div class="card">
+                    <h3>Economic Growth</h3>
+                    <p>Driving sustainable economic development and creating jobs for the future.</p>
+                </div>
+                <div class="card">
+                    <h3>Education</h3>
+                    <p>Ensuring quality education and equal opportunities for every child.</p>
+                </div>
+                <div class="card">
+                    <h3>Healthcare</h3>
+                    <p>Making healthcare affordable, accessible, and efficient for all citizens.</p>
+                </div>
+                <div class="card">
+                    <h3>Community Empowerment</h3>
+                    <p>Strengthening local communities through support, innovation, and leadership.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Content -->
+        <section class="video-section">
+            <h2>Watch Our Story</h2>
+            <p>Learn more about Agang SA and our vision for a better South Africa.</p>
+            <div class="video-thumbnails">
+                <a href="https://www.youtube.com/watch?v=rmDC5cAF-vs" target="_blank" class="video-thumb">
+                    <div class="play-button">&#9658;</div>
+                    <h3>Agang SA Introduction</h3>
+                </a>
+                <!-- Add more videos by copying the above block -->
+            </div>
+        </section>
+
+        <!-- News Preview -->
+        <section class="news-preview">
+            <h2>Latest News</h2>
+            <div class="news-items">
+                <article class="news-item">
+                    <h3>Agang SA Launches New Campaign</h3>
+                    <p>Join us as we unveil our latest initiatives aimed at improving the lives of South Africans.</p>
+                    <a href="news.html" class="btn">Read More</a>
+                </article>
+                <article class="news-item">
+                    <h3>Community Outreach Program Success</h3>
+                    <p>Our recent outreach program has made a significant impact in local communities.</p>
+                    <a href="news.html" class="btn">Read More</a>
+                </article>
+                <article class="news-item">
+                    <h3>Sucess Stories of the Community</h3>
+                    <p>This is one of the success stories of how we libarated our the community.</p>
+                    <a href="news.html" class="btn">Read More</a>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Agang SA. All rights reserved.</p>
+        <p>Follow us on 
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

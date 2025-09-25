@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events | Agang SA</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+   
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="campaign.html">Campaign</a></li>
+        <li><a href="getinvolved.html" class="active">Get Involved</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="events-container">
+    
+    <!-- Upcoming Events -->
+    <section class="upcoming-events">
+      <h2>Upcoming Events</h2>
+      <div class="event-item">
+        <h3>Community Clean-Up Day</h3>
+        <p>Date: 12 October 2025</p>
+        <p>Location: Johannesburg, South Africa</p>
+      </div>
+      <div class="event-item">
+        <h3>Ward Awareness Campaign</h3>
+        <p>Date: 25 October 2025</p>
+        <p>Location: Soweto, South Africa</p>
+      </div>
+      <div class="event-item">
+        <h3>Local Youth Engagement</h3>
+        <p>Date: 5 November 2025</p>
+        <p>Location: Pretoria, South Africa</p>
+      </div>
+    </section>
+
+    <!-- Register Your Ward Event -->
+    <section class="register-event">
+      <h2>Register Your Ward Event</h2>
+      <form id="ward-event-form">
+        <input type="text" id="name" name="name" placeholder="Full Name" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+        
+        <select id="province" name="province" required>
+          <option value="">Select Province</option>
+          <option value="Gauteng">Gauteng</option>
+          <option value="Limpopo">Limpopo</option>
+          <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+          <option value="Western Cape">Western Cape</option>
+          <option value="Eastern Cape">Eastern Cape</option>
+          <option value="Free State">Free State</option>
+          <option value="Mpumalanga">Mpumalanga</option>
+          <option value="North West">North West</option>
+          <option value="Northern Cape">Northern Cape</option>
+        </select>
+
+        <input type="text" id="municipality" name="municipality" placeholder="Municipality" required>
+        <input type="text" id="ward" name="ward" placeholder="Ward Number" required>
+
+        <button type="submit">Register Event</button>
+      </form>
+    </section>
+
+  </div>
+
+  <script>
+    // Simple form submission alert
+    const form = document.getElementById('ward-event-form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for registering your ward event! We will contact you soon.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>

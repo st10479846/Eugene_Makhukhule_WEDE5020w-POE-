@@ -1,42 +1,101 @@
 <!DOCTYPE html>
-<!--Declaration of the document type and version of HTML-->
-<html lang="en">    </html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campaign | Agang SA</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--Start of the Body content-->
+    <!-- HEADER -->
     <header>
-        <nav>
-            <ul>
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="news.html">News</a>
-                <a href="campaign.html">Campaign</a>
-                <a href="getinvolved.html">Get Involved</a>
-                <a href="donate.html">Donate</a>
-                <a href="contact.html">Contact Us</a>
-            </ul>
-        </nav>  
-    </header>   
+        <nav class="navbar">
+                        <div class="logo"><a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a></div>
 
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="campaign.html">Campaign</a></li>
+                <li><a href="getinvolved.html">Get Involved</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>  
+
+    <!-- MAIN CONTENT -->
     <main>
-        <!--Main content of the page-->
         <h1>Our Campaigns</h1>
         <div class="campaign-content">
-            <h2>Current Campaigns</h2>
-            <p>We are currently running several campaigns aimed at improving community welfare and promoting sustainable development.</p>
+            
+            <!-- CURRENT CAMPAIGNS -->
+            <section class="current-campaigns">
+                <h2>Current Campaigns</h2>
+                <p>Agang SA is actively running campaigns to improve the lives of South Africans. Here are some of our key initiatives:</p>
+                <ul>
+                    <li><strong>Education for All:</strong> Providing resources, scholarships, and mentoring programs to ensure every child has access to quality education.</li>
+                    <li><strong>Healthcare Accessibility:</strong> Campaigning for better healthcare services, mobile clinics, and health awareness programs in underserved areas.</li>
+                    <li><strong>Economic Empowerment:</strong> Supporting small businesses, entrepreneurship, and skills training to create sustainable jobs.</li>
+                    <li><strong>Environmental Sustainability:</strong> Promoting green initiatives, clean-up drives, and awareness campaigns for a healthier environment.</li>
+                </ul>
+            </section>
 
-            <h2>How You Can Help</h2>
-            <p>Your support is crucial. Learn how you can contribute to our campaigns and make a difference in the lives of many.</p>
+            <!-- OBJECTIVES -->
+            <section class="campaign-objectives">
+                <h2>Our Objectives</h2>
+                <p>Our campaigns aim to:</p>
+                <ul>
+                    <li>Strengthen communities through active engagement and participation.</li>
+                    <li>Address social and economic inequalities effectively.</li>
+                    <li>Promote transparency, accountability, and good governance.</li>
+                    <li>Create long-term solutions for sustainable development.</li>
+                </ul>
+            </section>
 
-            <h2>Success Stories</h2>
-            <p>Discover the impact of our past campaigns and how they have transformed communities.</p>
+            <!-- HOW YOU CAN HELP -->
+            <section class="how-to-help">
+                <h2>How You Can Help</h2>
+                <p>Your involvement makes a real difference. You can support our campaigns by:</p>
+                <ul>
+                    <li>Volunteering at events and programs.</li>
+                    <li>Donating to support our initiatives.</li>
+                    <li>Spreading awareness about our campaigns through social media.</li>
+                    <li>Participating in community meetings and feedback sessions.</li>
+                </ul>
+                <a href="getinvolved.html" class="btn">Join Us</a>
+            </section>
+
+            <!-- SUCCESS STORIES -->
+            <section class="success-stories">
+                <h2>Success Stories</h2>
+                <p>Our past campaigns have created lasting impact in communities across South Africa. Some highlights include:</p>
+                <ul>
+                    <li>Over 1,000 students received scholarships and mentorship through the Education for All program.</li>
+                    <li>Mobile health clinics reached rural areas, providing free check-ups and vaccinations.</li>
+                    <li>Entrepreneurship workshops helped over 200 small businesses increase revenue and create jobs.</li>
+                    <li>Community clean-up initiatives restored public spaces and promoted environmental awareness.</li>
+                </ul>
+            </section>
+
+            <!-- UPCOMING EVENTS -->
+            <section class="upcoming-events">
+                <h2>Upcoming Events</h2>
+                <p>Join us in our upcoming campaigns and events:</p>
+                <ul>
+                    <li>Community Town Hall – Discuss local issues and share your ideas. <em>(Date: September 15, 2025)</em></li>
+                    <li>Environmental Clean-Up Drive – Help make your neighborhood cleaner. <em>(Date: October 3, 2025)</em></li>
+                    <li>Skills Workshop for Youth – Training in entrepreneurship and career development. <em>(Date: November 10, 2025)</em></li>
+                </ul>
+            </section>
+
         </div>
     </main>
 
+    <!-- FOOTER -->
     <footer>
         <p>&copy; 2025 Agang SA. All rights reserved.</p>
     </footer>
+</body>
+</html>
+

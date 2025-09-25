@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Agang SA</title>    
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    
+  </style>
+  <!-- Stripe JS -->
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="campaign.html">Campaign</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Donation Section -->
+  <section class="donation-section">
+    <h1>Support Agang SA</h1>
+    <p>Your contribution helps us make a difference in communities across South Africa.</p>
+
+    <form id="donation-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="number" id="amount" placeholder="Donation Amount (ZAR)" required min="10">
+      <button type="submit" id="donate-button">Donate Now</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Agang SA. All rights reserved.</p>
+  </footer>
+
+  <!-- Stripe Payment Script -->
+  <script>
+    const stripe = Stripe('pk_test_YOUR_PUBLIC_STRIPE_KEY'); // Replace with your Stripe public key
+
+    const donateButton = document.getElementById('donate-button');
+    const form = document.getElementById('donation-form');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const amount = document.getElementById('amount').value;
+
+      // Call your backend to create a Stripe Checkout session
+      const response = await fetch('/create-checkout-session.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, amount })
+      });
+
+      const session = await response.json();
+
+      // Redirect to Stripe Checkout
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+
+      if (result.error) {
+        alert(result.error.message);
+      }
+    });
+  </script>
+</body>
+</html>
