@@ -9,88 +9,98 @@
 <body>
     
     <!-- HEADER -->
-      <header>
+    <header>
         <nav class="navbar">
-                        <div class="logo"><a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a></div>
+            <div class="logo">
+                <a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a>
+            </div>
             <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="campaign.html">Campaign</a></li>
-                <li><a href="getinvolved.html">Get Involved</a></li>
+                <li><a href="getinvolved.html" class="active">Get Involved</a></li>
                 <li><a href="donate.html">Donate</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>   
-        <!--END OF HEADER -->
+    <!-- END HEADER -->
 
     <!-- MAIN CONTENT -->
-  
- 
+    <main>
+        <!-- Volunteer Form Section -->
+        <section class="volunteer-section">
+            <div class="container">
+                <h1>Join Our Movement</h1>
+                <p>Become a volunteer and help us bring positive change to communities across South Africa.</p>
 
-  <!-- Volunteer Form Section -->
-  <section class="volunteer-section">
-    <h1>Join Our Movement</h1>
-    <p>Become a volunteer and help us bring positive change to communities across South Africa.</p>
+                <form id="volunteerForm" action="submit_volunteer.php" method="POST">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
+                    </div>
 
-    <form action="submit_volunteer.php" method="POST">
-      <!-- Personal Info -->
-      <div>
-        <label for="fullname">Full Name</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Your full name" required>
-      </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your email address" required>
+                    </div>
 
-      <div>
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Your email address" required>
-      </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="e.g. +27 71 234 5678" required>
+                    </div>
 
-      <div>
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="e.g. +27 71 234 5678" required>
-      </div>
+                    <div class="form-group">
+                        <label for="province">Province</label>
+                        <select id="province" name="province" required>
+                            <option value="">Select a Province</option>
+                            <option value="Eastern Cape">Eastern Cape</option>
+                            <option value="Free State">Free State</option>
+                            <option value="Gauteng">Gauteng</option>
+                            <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                            <option value="Limpopo">Limpopo</option>
+                            <option value="Mpumalanga">Mpumalanga</option>
+                            <option value="Northern Cape">Northern Cape</option>
+                            <option value="North West">North West</option>
+                            <option value="Western Cape">Western Cape</option>
+                        </select>
+                    </div>
 
-      <div>
-        <label for="province">Province</label>
-        <select id="province" name="province" required>
-          <option value="">Select a Province</option>
-          <option value="Eastern Cape">Eastern Cape</option>
-          <option value="Free State">Free State</option>
-          <option value="Gauteng">Gauteng</option>
-          <option value="KwaZulu-Natal">KwaZulu-Natal</option>
-          <option value="Limpopo">Limpopo</option>
-          <option value="Mpumalanga">Mpumalanga</option>
-          <option value="Northern Cape">Northern Cape</option>
-          <option value="North West">North West</option>
-          <option value="Western Cape">Western Cape</option>
-        </select>
-      </div>
+                    <div class="form-group">
+                        <label for="municipality">Municipality</label>
+                        <input type="text" id="municipality" name="municipality" placeholder="Your municipality" required>
+                    </div>
 
-      <div>
-        <label for="municipality">Municipality</label>
-        <input type="text" id="municipality" name="municipality" placeholder="Your municipality" required>
-      </div>
+                    <div class="form-group">
+                        <label for="ward">Ward Number</label>
+                        <input type="number" id="ward" name="ward" placeholder="e.g. 12" required>
+                    </div>
 
-      <div>
-        <label for="ward">Ward Number</label>
-        <input type="number" id="ward" name="ward" placeholder="e.g. 12" required>
-      </div>
+                    <div class="form-group full-width">
+                        <label for="message">Why do you want to volunteer?</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us why you want to get involved"></textarea>
+                    </div>
 
-      <!-- Additional Info -->
-      <div class="full-width">
-        <label for="message">Why do you want to volunteer?</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tell us why you want to get involved"></textarea>
-      </div>
+                    <button type="submit" id="submitBtn" class="btn-submit">
+                        <span id="submitText">Submit Registration</span>
+                        <span id="submitLoading" style="display:none;">
+                            <span class="spinner"></span> Sending...
+                        </span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-      <!-- Submit Button -->
-      <button type="submit" class="btn-submit">Submit Registration</button>
-    </form>
-  </section>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Agang SA. All rights reserved.</p>
+    </footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Agang SA. All rights reserved.</p>
-  </footer>
+    <!-- JS for interactive submit -->
+    
+   <script src="volunteer.js"></script>
+
 </body>
 </html>

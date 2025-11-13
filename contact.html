@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Agang SA</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Contact Agang SA for inquiries, support, or more information about our political movement and initiatives in South Africa. We're here to help!">
+    <meta name="keywords" content="Contact Agang SA, South African political party contact, Agang SA inquiries, political movement support, South Africa politics contact, Agang SA information">
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <nav class="navbar">
-                    <div class="logo"><a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a></div>
+            <div class="logo"><a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a></div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -30,74 +32,115 @@
 
             <!-- GENERAL CONTACT INFO -->
             <section class="contact-section">
-  <div class="container">
-    <h2>Get in Touch</h2>
-    <p class="intro">
-      If you have any questions, suggestions, or need further information, we would love to hear from you. 
-      Reach us through the form or any of the following channels.
-    </p>
+                <div class="container">
+                    <h2>Get in Touch</h2>
+                    <p class="intro">
+                        If you have any questions, suggestions, or need further information, we would love to hear from you. 
+                        Reach us through the form or any of the following channels.
+                    </p>
 
-    <div class="contact-grid">
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <h3>Send Us a Message</h3>
-        <form action="#" method="post">
-          <div class="form-group">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-          </div>
+                    <!-- Success Message -->
+                    <div id="successMessage" class="success-message">
+                        Thank you for your message! We'll get back to you within 24-48 hours.
+                    </div>
 
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-          </div>
+                    <div class="contact-grid">
+                        <!-- Contact Form -->
+                        <div class="contact-form">
+                            <h3>Send Us a Message</h3>
+                            <form id="contactForm" action="#" method="post">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                                    <div class="error-message" id="nameError">Please enter your full name (minimum 2 characters)</div>
+                                </div>
 
-          <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Type your message here" required></textarea>
-          </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                                    <div class="error-message" id="emailError">Please enter a valid email address</div>
+                                </div>
 
-          <button type="submit" class="btn-submit">Send Message</button>
-        </form>
-      </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="+27 12 345 6789">
+                                    <div class="error-message" id="phoneError">Please enter a valid South African phone number</div>
+                                </div>
 
-      <!-- Contact Information -->
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        <p><strong>Email:</strong> <a href="mailto:info@agangsa.org">info@agangsa.org</a></p>
-        <p><strong>Phone:</strong> +27 123 456 789</p>
-        <p><strong>Address:</strong> 123 Agang Street, Johannesburg, South Africa</p>
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a topic</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="membership">Membership Information</option>
+                                        <option value="volunteer">Volunteer Opportunities</option>
+                                        <option value="donation">Donation Questions</option>
+                                        <option value="event">Event Information</option>
+                                        <option value="media">Media Inquiry</option>
+                                        <option value="complaint">Complaint</option>
+                                        <option value="suggestion">Suggestion</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="error-message" id="subjectError">Please select a subject</div>
+                                </div>
 
-        <div class="social-links">
-          <h3>Follow Us</h3>
-          <ul>
-            <li><a href="https://www.facebook.com/agangsa" target="_blank">Facebook</a></li>
-            <li><a href="https://www.twitter.com/agangsa" target="_blank">Twitter</a></li>
-            <li><a href="https://www.instagram.com/agangsa" target="_blank">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+                                <div class="form-group">
+                                    <label for="message">Your Message *</label>
+                                    <textarea id="message" name="message" rows="5" placeholder="Type your message here (minimum 10 characters)" required minlength="10" maxlength="1000"></textarea>
+                                    <div class="character-count">
+                                        <span id="charCount">0</span>/1000 characters
+                                    </div>
+                                    <div class="error-message" id="messageError">Please enter a message (minimum 10 characters)</div>
+                                </div>
+
+                                <button type="submit" id="submitBtn" class="btn-submit">
+                                    <span id="submitText">Send Message</span>
+                                    <span id="submitLoading" style="display: none;">Sending...</span>
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="contact-info">
+                            <h3>Contact Information</h3>
+                            <p><strong>Email:</strong> <a href="mailto:info@agangsa.org">info@agangsa.org</a></p>
+                            <p><strong>Phone:</strong> +27 123 456 789</p>
+                            <p><strong>Address:</strong> 123 Agang Street, Johannesburg, South Africa</p>
+
+                            <div class="social-links">
+                                <h3>Follow Us</h3>
+                                <ul>
+                                    <li><a href="https://www.facebook.com/agangsa" target="_blank">Facebook</a></li>
+                                    <li><a href="https://www.twitter.com/agangsa" target="_blank">Twitter</a></li>
+                                    <li><a href="https://www.instagram.com/agangsa" target="_blank">Instagram</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- VISIT US MAP -->
             <section class="map">
-                <div class="map-container">
-                     <h2>Our Location</h2>
-                     <p>Find us easily using the map below:</p>
-                    <div class="map-embed">
+               <div class="map-container">
+                 <h2>Our Location</h2>
+                    <p>Find us easily using the map below:</p>
+        
+                    <div class="map-embed" id="mapEmbed">
+                    <div class="map-loading" id="mapLoading">
+                        <div class="spinner"></div>
+                      </div>
                      <iframe 
-                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.1355765701837!2d28.15952383491822!3d-25.66680009534205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebfd977f06c36c7%3A0xbc453969582d8d9d!2s717%20President%20Steyn%20St%2C%20Pretoria%20North%2C%20Pretoria%2C%200188!5e0!3m2!1sen!2sza!4v1758771521855!5m2!1sen!2sza"
-                         allowfullscreen="" 
-                         loading="lazy" 
-                         referrerpolicy="no-referrer-when-downgrade">
+                        id="googleMap"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.1355765701837!2d28.15952383491822!3d-25.66680009534205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebfd977f06c36c7%3A0xbc453969582d8d9d!2s717%20President%20Steyn%20St%2C%20Pretoria%20North%2C%20Pretoria%2C%200188!5e0!3m2!1sen!2sza!4v1758771521855!5m2!1sen!2sza"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                       referrerpolicy="no-referrer-when-downgrade">
                      </iframe>
-                 </div>
+                              </div>
               </div>
-            </section>
-
-
+                </div>
+          </section>
         </div>
     </main>
 
@@ -106,55 +149,7 @@
         <p>&copy; 2025 Agang SA. All rights reserved.</p>
     </footer>
 
-
-    <script>
-  // Select the form and submit button
-  const contactForm = document.querySelector('.contact-form form');
-  const submitButton = document.querySelector('.btn-submit');
-
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent default form submission
-
-    // Get form values
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-
-    if (!name || !email || !message) {
-      alert('Please fill in all fields.');
-      return;
-    }
-
-    // Optional: disable button while sending
-    submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
-
-    try {
-      // Send form data to your backend (replace URL with your endpoint)
-      const response = await fetch('contact-submit.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, email, message })
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        alert('Thank you! Your message has been sent.');
-        contactForm.reset(); // Reset form fields
-      } else {
-        alert('Oops! Something went wrong. Please try again later.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred while sending your message.');
-    }
-
-    submitButton.disabled = false;
-    submitButton.textContent = 'Send Message';
-  });
-</script>
+    <!-- External JavaScript -->
+    <script src="js/contact-form.js"></script>
 </body>
 </html>

@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Events | Agang SA</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-   
-  </style>
+  <meta name="keywords" content="Agang SA, South African political party, democratic reform, social justice, community development, political activism, volunteer South Africa">
 </head>
 <body>
   <!-- HEADER -->
@@ -21,15 +19,15 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="news.html">News</a></li>
         <li><a href="campaign.html">Campaign</a></li>
-        <li><a href="getinvolved.html" class="active">Get Involved</a></li>
+        <li><a href="getinvolved.html">Get Involved</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="events-container">
-    
+  <main class="events-container">
     <!-- Upcoming Events -->
     <section class="upcoming-events">
       <h2>Upcoming Events</h2>
@@ -54,10 +52,16 @@
     <section class="register-event">
       <h2>Register Your Ward Event</h2>
       <form id="ward-event-form">
+        <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Full Name" required>
+
+        <label for="email">Email Address</label>
         <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+        <label for="phone">Phone Number</label>
         <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
-        
+
+        <label for="province">Province</label>
         <select id="province" name="province" required>
           <option value="">Select Province</option>
           <option value="Gauteng">Gauteng</option>
@@ -71,23 +75,20 @@
           <option value="Northern Cape">Northern Cape</option>
         </select>
 
+        <label for="municipality">Municipality</label>
         <input type="text" id="municipality" name="municipality" placeholder="Municipality" required>
-        <input type="text" id="ward" name="ward" placeholder="Ward Number" required>
 
-        <button type="submit">Register Event</button>
+        <label for="ward">Ward Number</label>
+        <input type="number" id="ward" name="ward" placeholder="Ward Number" required>
+
+        <button type="submit" id="submitBtn">
+          <span id="submitText">Register Event</span>
+          <span id="submitLoading" style="display:none;">Sending...</span>
+        </button>
       </form>
     </section>
+  </main>
 
-  </div>
-
-  <script>
-    // Simple form submission alert
-    const form = document.getElementById('ward-event-form');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Thank you for registering your ward event! We will contact you soon.');
-      form.reset();
-    });
-  </script>
+  <script src="events.js"></script>
 </body>
 </html>

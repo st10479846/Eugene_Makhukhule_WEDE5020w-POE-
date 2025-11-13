@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Keyword Optimization -->
+    <meta name="keywords" content="Agang SA, South African political party, democratic reform South Africa, social justice, community development, political activism, volunteer South Africa, South Africa future, political change, social movement, elections South Africa">
+    
+    <!-- Author and Copyright -->
+    <meta name="author" content="Agang SA Leadership Team">
+    <meta name="copyright" content="Agang SA South Africa">
+    
+    <!-- Open Graph Meta Tags - Essential for Social Media Sharing -->
+    <meta property="og:title" content="Agang SA | Building a Better Future for South Africa">
+    <meta property="og:description" content="Join South Africa's political movement for democratic reform, social justice, and community development. Be part of the change.">
+    <meta property="og:image" content="https://yourdomain.com/images/agang-sa-social-preview.jpg">
+    <meta property="og:url" content="hhttps://agangsa.org">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Agang SA South Africa">
+    <meta property="og:locale" content="en_ZA">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agang SA | Building South Africa's Future">
+    <meta name="twitter:description" content="Join the political movement creating positive change across South African communities. Get involved today.">
+    <meta name="twitter:image" content="https://yourdomain.com/images/agang-sa-twitter-card.jpg">
+    <meta name="twitter:site" content="@AgangSA">
+    <meta name="twitter:creator" content="@AgangSA">
+    
+    <!-- Canonical URL - Prevents Duplicate Content Issues -->
+    <link rel="canonical" href="https://agangsa.org.za/news.html">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2c3e50">
+    
+    <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <title>News | Agang SA</title>
 </head>
 <body>
@@ -27,6 +64,11 @@
     <!-- MAIN CONTENT -->
     <main class="news-listing">
         <h1>Latest News</h1>
+
+         <!-- Search Box -->
+    <div class="search-container">
+        <input type="text" id="newsSearch" placeholder="Search news..." />
+    </div>
 
         <div class="news-grid">
             <article class="news-card">
@@ -67,5 +109,60 @@
     <footer>
         <p>&copy; 2025 Agang SA. All rights reserved.</p>
     </footer>
+<script>
+const searchInput = document.getElementById('newsSearch');
+const newsList = document.getElementById('newsList');
+const newNewsList = document.getElementById('newNewsList');
+const clearBtn = document.getElementById('clearSearchBtn');
+
+// Function to filter news
+function filterNews() {
+    const filter = searchInput.value.toLowerCase();
+    const allNewsItems = [...newsList.children, ...newNewsList.children];
+
+    allNewsItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(filter) ? '' : 'none';
+    });
+}
+
+// Press Enter to search
+searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+        e.preventDefault(); // Prevent form submission
+        filterNews();
+    }
+});
+
+// Clear search
+clearBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    const allNewsItems = [...newsList.children, ...newNewsList.children];
+    allNewsItems.forEach(item => item.style.display = '');
+});
+
+// Function to dynamically add a new news article
+function addNewsArticle(title, content) {
+    const article = document.createElement('article');
+    article.classList.add('news-item');
+
+    const h2 = document.createElement('h2');
+    h2.textContent = title;
+
+    const p = document.createElement('p');
+    p.textContent = content;
+
+    article.appendChild(h2);
+    article.appendChild(p);
+
+    // Add to new articles container
+    newNewsList.prepend(article);
+}
+
+// Example dynamic articles
+addNewsArticle("New Youth Workshop", "A new workshop was held to empower young leaders.");
+addNewsArticle("Community Tree Planting", "Volunteers planted 200 trees in local parks.");
+
+</script>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Agang SA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="_images/logo.png" alt="Agang SA Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="campaign.html">Campaign</a></li>
+                <li><a href="getinvolved.html">Get Involved</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="gallery-container">
+        <h1>Welcome to Agang SA Gallery</h1>
+        <p>Explore our community events and initiatives through photos.</p>
+
+        <div class="gallery-grid">
+            <img src="_images\DSCF0092-Small.jpg" alt="Community Event 1" class="gallery-item">
+            <img src="_images\agang-sa-party-leader-mamphela-ramphele-and-members-launched-its-national-DY1GRB.jpg" alt="Community Event 2" class="gallery-item">
+            <img src="_images\agang-sa-party-leader-mamphela-ramphele-and-members-launched-its-national-DY1GR3.jpg" alt="Community Event 3" class="gallery-item">
+            <img src="_images/6ed41fb9-0000220760.jpg.optimal.jpg" alt="Community Event 4" class="gallery-item">
+            <img src="_images\ff439ce90e544abd3a97b0163d3ebf45e38fbe82=w700.webp" alt="Community Event 5" class="gallery-item">
+            <img src="_images/maxresdefault.jpg" alt="Community Event 6" class="gallery-item">
+        </div>
+
+             <!-- Lightbox -->
+                       <div id="lightbox" class="lightbox">
+                       <span class="close">&times;</span>
+                      <img class="lightbox-content" id="lightbox-img">
+                       <div class="caption" id="lightbox-caption"></div>
+                        <a class="prev">&#10094;</a>
+                      <a class="next">&#10095;</a>
+                        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2025 Agang SA. All rights reserved.</p>
+    </footer>
+
+    <script src="gallery.js"></script>
+</body>
+</html>
