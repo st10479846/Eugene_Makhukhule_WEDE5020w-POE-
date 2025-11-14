@@ -37,6 +37,9 @@
     
     <!-- CSS Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+
+    <!---Searhc icont  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="styles.css" as="style">
@@ -68,23 +71,24 @@
          <!-- Search Box -->
     <div class="search-container">
         <input type="text" id="newsSearch" placeholder="Search news..." />
+        <span class="search-incon material-symbols-outlined">search</span>
     </div>
 
-        <div class="news-grid">
+        <div class="news-grid" id="newsGrid">
             <article class="news-card">
-                <img src="_images/news1.png" alt="News Image 1">
-                <h3>Agang SA Launches New Campaign</h3>
-                <p class="meta">Posted on September 20, 2025</p>
-                <p>Join us as we unveil our latest initiatives aimed at improving the lives of South Africans.</p>
-                <a href="news-post.html" class="btn">Read More</a>
-            </article>
+                    <img src="_images/news1.png" alt="News Image 1">
+                     <h3>Agang SA Launches New Campaign</h3>
+                   <p class="meta">Posted on September 20, 2025</p>
+                    <p>Join us as we unveil our latest initiatives aimed at improving the lives of South Africans.</p>
+                  <a href="news-posts/campaign-launch.html" class="btn">Read More</a>
+                </article>
 
             <article class="news-card">
                 <img src="_images/news1.png" alt="News Image 2">
                 <h3>Community Outreach Program Success</h3>
                 <p class="meta">Posted on September 18, 2025</p>
                 <p>Our recent outreach program has made a significant impact in local communities.</p>
-                <a href="news-post.html" class="btn">Read More</a>
+                <a href="news-posts/community-outreach.html" class="btn">Read More</a>
             </article>
 
             <article class="news-card">
@@ -92,7 +96,7 @@
                 <h3>Policy Initiative: Education for All</h3>
                 <p class="meta">Posted on September 15, 2025</p>
                 <p>Agang SA continues to push for equal access to education for every child in South Africa.</p>
-                <a href="news-post.html" class="btn">Read More</a>
+                <a href="news-posts/education-initiative.html" class="btn">Read More</a>
             </article>
 
             <article class="news-card">
@@ -100,7 +104,7 @@
                 <h3>Healthcare Program Expansion</h3>
                 <p class="meta">Posted on September 10, 2025</p>
                 <p>We are expanding our healthcare initiatives to reach more communities in need.</p>
-                <a href="news-post.html" class="btn">Read More</a>
+                <a href="news-posts/healthcare-expansion.html" class="btn">Read More</a>
             </article>
         </div>
     </main>
@@ -109,60 +113,7 @@
     <footer>
         <p>&copy; 2025 Agang SA. All rights reserved.</p>
     </footer>
-<script>
-const searchInput = document.getElementById('newsSearch');
-const newsList = document.getElementById('newsList');
-const newNewsList = document.getElementById('newNewsList');
-const clearBtn = document.getElementById('clearSearchBtn');
+<script src="news-search.js"></script>
 
-// Function to filter news
-function filterNews() {
-    const filter = searchInput.value.toLowerCase();
-    const allNewsItems = [...newsList.children, ...newNewsList.children];
-
-    allNewsItems.forEach(item => {
-        const text = item.textContent.toLowerCase();
-        item.style.display = text.includes(filter) ? '' : 'none';
-    });
-}
-
-// Press Enter to search
-searchInput.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter') {
-        e.preventDefault(); // Prevent form submission
-        filterNews();
-    }
-});
-
-// Clear search
-clearBtn.addEventListener('click', function() {
-    searchInput.value = '';
-    const allNewsItems = [...newsList.children, ...newNewsList.children];
-    allNewsItems.forEach(item => item.style.display = '');
-});
-
-// Function to dynamically add a new news article
-function addNewsArticle(title, content) {
-    const article = document.createElement('article');
-    article.classList.add('news-item');
-
-    const h2 = document.createElement('h2');
-    h2.textContent = title;
-
-    const p = document.createElement('p');
-    p.textContent = content;
-
-    article.appendChild(h2);
-    article.appendChild(p);
-
-    // Add to new articles container
-    newNewsList.prepend(article);
-}
-
-// Example dynamic articles
-addNewsArticle("New Youth Workshop", "A new workshop was held to empower young leaders.");
-addNewsArticle("Community Tree Planting", "Volunteers planted 200 trees in local parks.");
-
-</script>
 </body>
 </html>

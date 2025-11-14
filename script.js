@@ -835,3 +835,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+
+// =============================
+// NEWS SEARCH FUNCTIONALITY
+// =============================
+
+// Get search input
+const searchInput = document.getElementById("newsSearch");
+
+// Get all news cards
+const newsGrid = document.getElementById("newsGrid");
+const articles = newsGrid.querySelectorAll(".news-card");
+
+// SEARCH FUNCTION
+function searchNews() {
+    const query = searchInput.value.toLowerCase();
+
+    articles.forEach(article => {
+        const text = article.textContent.toLowerCase();
+
+        // Show or hide based on match
+        if (text.includes(query)) {
+            article.style.display = "";
+        } else {
+            article.style.display = "none";
+        }
+    });
+}
+
+// RUN SEARCH ON ENTER
+searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        e.preventDefault();
+        searchNews();
+    }
+});
+
+// OPTIONAL: Run search while typing (live search)
+// Uncomment if you want live update
+// searchInput.addEventListener("input", searchNews);
+
