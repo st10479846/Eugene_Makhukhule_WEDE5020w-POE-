@@ -1,0 +1,288 @@
+# Changelog
+
+All notable changes to the Agang SA website project will be documented in this file.
+
+## Project Overview
+**Project:** Agang SA Website  
+**Purpose:** Digital platform for social, political, and community engagement in South Africa  
+**Development Context:** Portfolio of Evidence (POE) for Web Development  
+**Technologies:** HTML5, CSS3, Vanilla JavaScript
+
+---
+
+## [Unreleased]
+
+### Added
+- **Responsive Navigation:** Hamburger menu implementation for mobile devices
+- **Mobile-First CSS:** Responsive design using media queries with mobile-first approach
+- **Accessibility Improvements:** Semantic HTML structure, alt text for all images, ARIA roles implementation
+- **SEO Optimization:** Meta tags (`description`, `keywords`, `author`) added to `<head>` section
+- **Social Media Integration:** Social media links added to website footer
+- **Multimedia Content:** Video thumbnail section with play button overlay feature
+
+### Changed
+- **Navigation Structure:** Updated for better usability across all devices
+- **Layout Optimization:** Improved spacing and layout for mobile and tablet screens
+- **Interactive Elements:** Enhanced button styles for better touch interaction
+- **Accessibility Compliance:** Improved color contrast ratios for better readability
+- **Hero Section:** Updated for optimal readability on small screens
+
+### Fixed
+- **CSS Path Correction:** Fixed `<link rel="stylesheet" href="styles.css">` path issues
+- **Content Accuracy:** Corrected typos in news section:
+  - "Sucess" → "Success"
+  - "libarated" → "liberated" 
+  - "our the community" → "our community"
+- **Image Accessibility:** Ensured all images have descriptive `alt` attributes
+
+### Removed
+- None
+
+---
+
+## [Version 2.1 - Accessibility & Mobile Enhancement] - 2025-10-28
+### Added
+- **Hamburger Menu Implementation:** Mobile navigation with smooth toggle functionality
+- **ARIA Landmarks:** Added roles="navigation", "main", "banner", "contentinfo"
+- **SEO Meta Tags:** Comprehensive meta description and keywords for better search visibility
+- **Social Media Footer:** LinkedIn, Twitter, Facebook icons with proper links
+- **Video Content Section:** Embedded video thumbnails with play functionality
+
+### Changed
+- **Mobile-First Approach:** Restructured CSS to prioritize mobile devices
+- **Touch Interface:** Increased button sizes and touch targets for mobile users
+- **Color Accessibility:** Enhanced contrast ratios meeting WCAG guidelines
+- **Responsive Typography:** Scalable font sizes using clamp() and relative units
+
+### Fixed
+- **CSS Linking Issues:** Corrected file paths in all HTML documents
+- **Content Quality:** Proofread and corrected all textual content
+- **Image Optimization:** Added meaningful alt text to all visual elements
+- **Cross-Browser Compatibility:** Tested and fixed rendering issues
+
+### Technical Notes
+- **CSS Path Verification:** Ensure CSS file location matches HTML reference
+- **Cache Management:** Recommended hard refresh (Ctrl+F5) for testing
+- **Syntax Validation:** CSS and HTML validated for errors
+
+---
+
+## [Version 2.0 - Part 2 Final] - 2025-10-23
+### Feedback Implementation from Part 1
+**Based on Part 1 Score: 75/100**
+- **Fixed README Documentation:** Added all required information as per POE guide
+- **Enhanced References:** Comprehensive and correctly formatted references added
+- **Improved Changelog:** Detailed development record maintained
+- **Navigation Fix:** Mobile navigation menu issues resolved
+
+### CSS Styling - Desktop Implementation
+#### External Stylesheet
+- **Created and Implemented:** `style.css` correctly linked in all 7 HTML pages
+- **Consistent Implementation:** Uniform styling across all pages (index.html, about.html, news.html, campaign.html, getinvolved.html, donate.html, contact.html)
+
+#### Default Style Code
+- **Comprehensive Base Styles:** CSS reset and default element styling
+- **Consistent Application:** Font family (Arial, sans-serif), font sizes, color scheme applied throughout
+- **Cohesive Design:** Unified look and feel across all website sections
+
+#### Typography Styles
+- **Hierarchical Text Styling:** h1 (2.5rem), h2 (2rem), h3 (1.5rem), p (1rem)
+- **Font Properties:** Consistent font weights (300, 400, 700), line heights (1.6), letter spacing
+- **Readability Enhancement:** Optimal contrast ratios and text alignment
+
+#### Layout Structure
+- **CSS Grid & Flexbox:** Modern layout techniques implemented
+- **Proper Element Positioning:** Header, navigation, main content, footer correctly positioned
+- **Visual Harmony:** Consistent spacing, alignment, and white space usage
+
+#### Decoration and Color
+- **Color Scheme:** Primary (#2c3e50), Secondary (#e74c3c), Accent (#3498db)
+- **Decorative Elements:** Box shadows, borders, gradients, and hover effects
+- **Visual Consistency:** Color palette applied uniformly across all interactive elements
+
+#### Pseudo-Classes
+- **Interactive States:** `:hover`, `:focus`, `:active` implemented for all interactive elements
+- **Navigation Enhancement:** Menu items, buttons, and links with state-based styling
+- **User Feedback:** Visual indicators for all user interactions
+
+### Responsive Design Implementation
+#### Media Queries/Breakpoints
+- **Tablet Breakpoint:** `@media (max-width: 768px)`
+- **Mobile Breakpoint:** `@media (max-width: 480px)`
+- **Comprehensive Coverage:** All screen sizes addressed
+
+#### Layout Adjustments
+- **Mobile-First Approach:** Progressive enhancement from mobile to desktop
+- **Flexible Grid Systems:** CSS Grid and Flexbox adaptations for different screens
+- **Seamless Adaptation:** Layout restructures gracefully across devices
+
+#### Typography Adjustments
+- **Relative Units:** Use of rem/em for scalable typography
+- **Viewport-Based Sizing:** vw/vh units for responsive text scaling
+- **Readability Optimization:** Line lengths and font sizes adjusted for mobile
+
+#### Navigation Menu Adjustments
+- **Mobile Navigation Fix:** Resolved disappearing navigation on mobile screens
+- **Hamburger Menu:** Implemented for mobile devices with smooth transitions
+- **Touch-Friendly:** Larger tap targets for mobile users (44px minimum)
+
+#### Image Adjustments
+- **Responsive Images:** `max-width: 100%` and `height: auto`
+- **Art Direction:** Different image crops for different screen sizes
+- **Performance Optimization:** Appropriate image sizes for each breakpoint
+
+### GitHub & Documentation
+#### Commits
+- **Multiple Descriptive Commits:** Regular commits with detailed messages
+- **Feature-Based Committing:** Separate commits for styling, responsive design, fixes
+- **Progress Tracking:** Clear commit history showing development progression
+
+#### README Document
+- **Comprehensive Information:** All required sections as per POE guide
+- **Project Documentation:** Setup instructions, technologies, features, structure
+- **User Guidance:** Clear explanations for developers and users
+
+#### References
+- **Complete Reference Section:** All sources properly cited and formatted
+- **Resource Attribution:** CSS frameworks, code snippets, design inspiration
+- **Academic Standards:** APA/MLA formatting as required
+
+---
+
+## [Version 1.1 - CSS Enhancement] - 2025-10-20
+### CSS Foundation
+- **External Stylesheet Creation:** Initial `style.css` setup
+- **Basic Layout Structure:** Header, main, footer positioning
+- **Color Scheme Implementation:** Primary brand colors applied
+- **Typography Foundation:** Base font styles and hierarchy
+
+### Responsive Design Base
+- **Initial Media Queries:** Basic breakpoints for tablet and mobile
+- **Fluid Layouts:** Percentage-based widths and flexible containers
+- **Mobile Navigation Start:** Beginning of hamburger menu implementation
+
+---
+
+## [Version 1.0 - Part 1 Final] - 2025-01-25
+### Added
+- **Complete website deployment** with all 7 main pages
+- **Homepage** (`index.html`) with hero section and featured content
+- **About page** (`about.html`) with mission, vision, and values
+- **News & Blog page** (`news.html`) for updates and articles
+- **Campaigns page** (`campaign.html`) showcasing ongoing initiatives
+- **Get Involved page** (`getinvolved.html`) for volunteer opportunities
+- **Donation page** (`donate.html`) with contribution functionality
+- **Contact page** (`contact.html`) with contact form and information
+
+### Technical Implementation
+- **HTML5 Semantic Structure:** Used `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`
+- **Basic CSS Styling:** Initial styling without full responsiveness
+- **Navigation System:** Basic menu linking all pages
+- **Content Hierarchy:** Proper heading structure (h1-h6) throughout all pages
+
+### File Structure Finalized
+
+
+# Changelog
+
+All notable changes to the Agang SA website project will be documented in this file.
+
+## Project Overview
+**Project:** Agang SA Website  
+**Purpose:** Digital platform for social, political, and community engagement in South Africa  
+**Development Context:** Portfolio of Evidence (POE) for Web Development  
+**Technologies:** HTML5, CSS3, Vanilla JavaScript
+
+---
+
+## [Unreleased]
+
+### Planned JavaScript Enhancements
+- **Form Validation System:** Advanced client-side validation for all forms
+- **Interactive Maps:** Enhanced map functionality with custom markers
+- **News Filtering:** Category-based filtering for news and blog sections
+- **Performance Monitoring:** Analytics integration for user behavior tracking
+
+### CSS Enhancements
+- **CSS Variables System:** Expanding `:root` variables for comprehensive theme management
+- **Advanced Animations:** Implementing CSS keyframes for micro-interactions
+- **Print Stylesheets:** Adding print media queries for better document printing
+
+---
+
+## [Version 2.3 - JavaScript Functionality] - 2025-11-01
+
+### JavaScript Implementation
+
+#### Added
+- **Mobile Navigation System:**
+  - Hamburger menu toggle functionality for mobile devices
+  - Automatic menu closure when navigation links are clicked
+  - Click-outside detection to close menu when clicking elsewhere
+  - Robust error handling for pages without navigation elements
+
+- **Payment Integration:**
+  - Stripe donation form integration with secure payment processing
+  - Client-side form validation and submission handling
+  - Redirect functionality to Stripe Checkout sessions
+  - Comprehensive error handling for payment failures
+
+- **Event Management:**
+  - DOMContentLoaded wrapper for proper script execution timing
+  - Conditional element existence checking to prevent runtime errors
+  - Modular code structure for maintainability
+
+#### Changed
+- **Code Architecture:**
+  - Improved event listener organization and management
+  - Enhanced error prevention through element validation
+  - Streamlined form submission workflows
+
+#### Fixed
+- **Cross-Page Compatibility:**
+  - Prevented JavaScript errors on pages without specific elements
+  - Ensured consistent behavior across all website pages
+  - Resolved mobile navigation reliability issues
+
+### Technical Implementation Details
+
+#### Mobile Navigation Code Structure
+```javascript
+// Hamburger menu functionality with error prevention
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+    
+    // Close menu on link click
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
+# Changelog
+
+## [Unreleased] - 2025-11-14
+
+### Added
+- Initial commit of the project repository.
+- Added newspost HTML files:
+  - `campaign-launch.html`
+  - `community-outreach.html`
+  - `education-initiative.html`
+  - `healthcare-expansion.html`
+- Added supporting files:
+  - `news.html`
+  - `script.js`
+  - `styles.css`
+  - `Eugene_Makhukhule_WEDE5020w-POE-/` (embedded repository)
+
+### GitHub Actions
+- Repository initialized with `git init`.
+- Remote `origin` linked to `https://github.com/st10479846/Eugene_Makhukhule_WEDE5020w-POE-.git`.
+- Branch `main` created and pushed to GitHub.
+- Changes committed and pushed successfully.
+- Warnings noted for adding an embedded Git repository (`Eugene_Makhukhule_WEDE5020w-POE-`).
+
