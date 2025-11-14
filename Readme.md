@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Welcome to the official source code for the Agang SA website — a digital platform designed to promote social, political, and community engagement in South Africa.
 
 This project was developed as part of a Portfolio of Evidence (POE) to demonstrate skills in web development, content research, and sourcing.
@@ -79,3 +78,9 @@ project-folder/
 └── README.md            # Documentation file
 
 >>>>>>> 5f68d170bd61364c86e4cf43c3082b0a7f6d2444
+
+## References
+- [SimpleLightbox](https://simplelightbox.com/)
+- [Stripe JS](https://stripe.com/docs/js)
+- [Font: Lexend Deca](https://fonts.google.com/specimen/Lexend+Deca)
+- Images: Unsplash, Agang SA Media

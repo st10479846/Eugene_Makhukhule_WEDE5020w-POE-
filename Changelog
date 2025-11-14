@@ -286,3 +286,14 @@ if (hamburger && navMenu) {
 - Changes committed and pushed successfully.
 - Warnings noted for adding an embedded Git repository (`Eugene_Makhukhule_WEDE5020w-POE-`).
 
+---
+
+### 2025-11-14
+- Added SEO meta tags and structured data to `index.html`
+- Improved mobile navigation and hamburger menu
+- Updated donation form validation and styling
+- Linked news articles to individual pages in `news-posts/`
+- Added robots.txt and sitemap.xml for SEO
+- Updated footer with newsletter and social links
+- Fixed typos and improved accessibility
+

@@ -1,0 +1,41 @@
+# ===============================
+# robots.txt for Agang SA Website
+# ===============================
+
+# Applies to all crawlers
+User-agent: *
+Allow: /
+
+# -------------------------------
+# Block sensitive or private areas
+# -------------------------------
+Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /backup/
+Disallow: /old/
+
+# -------------------------------
+# Block URL parameters (if used)
+# -------------------------------
+# Disallow: /*?sessionid=
+# Disallow: /*?ref=
+
+# -------------------------------
+# Crawl-delay to reduce server load
+# -------------------------------
+# Crawl-delay: 10
+
+# -------------------------------
+# Sitemap location
+# -------------------------------
+Sitemap: https://agangsa.org/sitemap.xml
+
+# -------------------------------
+# Notes:
+# 1. Allow / ensures normal pages are crawlable.
+# 2. Disallowed paths prevent indexing of admin, private, or temporary files.
+# 3. Sitemap helps search engines find all pages efficiently.
+# 4. Optional crawl-delay can reduce server stress for smaller hosting.

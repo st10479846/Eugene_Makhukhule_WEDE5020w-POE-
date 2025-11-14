@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agang SA Launches New Campaign</title>
-
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -16,7 +15,6 @@
                 <img src="../_images/logo.png" alt="Agang SA Logo">
             </a>
         </div>
-
         <ul class="nav-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../about.html">About Us</a></li>
@@ -32,39 +30,89 @@
     <main class="news-post-container">
         <article class="news-post">
             <img src="../_images/news1.png" alt="Agang SA Campaign Launch">
-
-           <h1>Agang SA Launches New Campaign</h1>
+            <h1>Agang SA Launches New Campaign</h1>
             <p class="meta">Posted on September 20, 2025</p>
-
             <p>Join us as we unveil our latest initiatives aimed at improving the lives of South Africans. This new campaign will focus on community development, educational reform, and stronger local engagement across all provinces.</p>
-
             <p>Our leadership team has outlined several key goals that will guide our efforts over the coming months. The campaign launch marks the beginning of a new chapter in our mission to build a stronger, more inclusive nation.</p>
-
             <h2>Key Highlights of the Campaign:</h2>
-
             <h3>1. Community Development</h3>
             <p>We are committed to strengthening local communities through targeted programs that promote economic empowerment, social cohesion, and access to essential services. This includes supporting small businesses, community projects, and local volunteer initiatives.</p>
-
             <h3>2. Educational Reform</h3>
             <p>Education remains a cornerstone of national development. Our campaign will focus on improving access to quality education for all children, investing in digital learning infrastructure, and partnering with schools to provide mentorship programs and resources for teachers and students.</p>
-
             <h3>3. Youth Empowerment</h3>
             <p>Young South Africans are the future of our country. This campaign will establish leadership workshops, skills training programs, and entrepreneurship support to equip the youth with the tools they need to succeed.</p>
-
             <h3>4. Healthcare and Social Support</h3>
             <p>Access to healthcare and social services is a top priority. We aim to expand healthcare outreach programs, support mental health initiatives, and improve community wellness centers to ensure every citizen can access essential care.</p>
-
             <h3>5. Civic Engagement and Transparency</h3>
             <p>We encourage all citizens to actively participate in shaping policies and decisions that affect their communities. This campaign will increase public forums, town hall meetings, and digital platforms for direct engagement with our leadership team.</p>
-
             <h2>Looking Ahead</h2>
             <p>The launch of this campaign is more than an event; it is a call to action for all South Africans who want to be part of meaningful change. Agang SA invites citizens, civil society organizations, and local leaders to collaborate with us in building a future that is equitable, inclusive, and sustainable.</p>
-
             <p>Together, we can create communities where every individual has the opportunity to thrive and contribute to a stronger South Africa.</p>
-
-            <a href="../news.html" class="btn">⬅ Back to News</a>
+            <a href="../news.html" class="btn">&#8592; Back to News</a>
         </article>
     </main>
 
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Widget 1: About -->
+            <div class="footer-widget about-widget">
+                <h3>One Nation, One Future</h3>
+                <p>Built on Freedom, Fairness, Opportunity, and Diversity for All. Agang SA is committed to creating a transparent, inclusive, and empowered South Africa.</p>
+                <p>We envision a South Africa where everyone has access to the resources, opportunities, and tools needed to thrive, contribute meaningfully to society, and achieve personal and collective success. Our vision is grounded in equity, opportunity, and social cohesion.</p>
+                <div class="footer-vision">
+                    <h3>Our Vision</h3>
+                    <p>We envision a South Africa where everyone has access to the resources, opportunities, and tools needed to thrive, contribute meaningfully to society, and achieve personal and collective success. Our vision is grounded in equity, opportunity, and social cohesion.</p>
+                </div>
+            </div>
+            <!-- Widget 2: Contact & Social Links -->
+            <div class="footer-widget contact-widget">
+                <h3>Contact Details</h3>
+                <p>Phone: +27 123 456 789</p>
+                <p>SMS Only: +27 123 456 789</p>
+                <p>Email: info@agangsa.org</p>
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://instagram.com/AgangSA" target="_blank">Instagram</a>
+                    <a href="https://tiktok.com/@AgangSA" target="_blank">TikTok</a>
+                    <a href="https://facebook.com/AgangSA" target="_blank">Facebook</a>
+                    <a href="https://twitter.com/AgangSA" target="_blank">X (Twitter)</a>
+                    <a href="https://youtube.com/@AgangSA" target="_blank">YouTube</a>
+                    <a href="mailto:info@agangsa.org">Email</a>
+                </div>
+            </div>
+            <!-- Widget 3: Quick Links -->
+            <div class="footer-widget links-widget">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="../about.html">Why Agang SA?</a></li>
+                    <li><a href="../news.html">News</a></li>
+                    <li><a href="../campaign.html">Campaign</a></li>
+                    <li><a href="../getinvolved.html">Get Involved</a></li>
+                    <li><a href="../volunteer.html">Volunteering</a></li>
+                    <li><a href="../events.html">Events</a></li>
+                    <li><a href="../donate.html">Donate</a></li>
+                    <li><a href="../contact.html">Contact Us</a></li>
+                </ul>
+                <div class="footer-widget">
+                    <h3>Subscribe to Our Newsletter</h3>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="footerYear"></span> Agang SA. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Dynamic year for footer
+        document.addEventListener('DOMContentLoaded', function() {
+            var yearSpan = document.getElementById('footerYear');
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>
