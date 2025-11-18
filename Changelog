@@ -8,6 +8,56 @@ All notable changes to the Agang SA website project will be documented in this f
 **Development Context:** Portfolio of Evidence (POE) for Web Development  
 **Technologies:** HTML5, CSS3, Vanilla JavaScript
 
+
+### Part 1 - Initial Development
+- **Basic website structure** with 10+ pages
+- **CSS styling** with variables and consistent design
+- **SEO optimization** with meta tags and descriptions
+
+### Part 2 - Responsive Implementation  
+- **Mobile navigation** with hamburger menu
+- **Responsive grid layouts** for all pages
+- **Typography scaling** for mobile devices
+- **Image optimization** for different screen sizes
+
+
+### Part 3 - Final Submission
+- **Implemented form validation** with real-time error messages
+- **Added interactive Google Maps** integration
+- **Enhanced gallery lightbox** with keyboard navigation
+- **Improved responsive design** across all devices
+- **Added news search functionality** with dynamic filtering
+---
+
+## **Changelog.md**
+
+# Changelog
+
+All notable changes to this project are documented below.  
+
+---
+
+## [v1.0] - Initial Setup
+- Added `index.html` with basic structure
+- Added CSS file and basic styling
+- Added folder structure for images and JS
+
+## [v1.1] - Content Addition
+- Created `news.html` page with sample content
+- Added images to the news page
+- Added navigation menu linking all pages
+
+## [v1.2] - Functional Updates
+- Implemented JavaScript search feature (if applicable)
+- Improved CSS layout and responsive adjustments
+- Added semantic HTML tags for proper structure
+
+## [v1.3] - Finalization
+- Added `contact.html` and `about.html` pages
+- Completed README.md with project details
+- Added comments in HTML, CSS, and JS for clarity
+- Prepared for GitHub submission with descriptive commits
+
 ---
 
 ## [Unreleased]
@@ -246,54 +296,47 @@ All notable changes to the Agang SA website project will be documented in this f
 
 ### Technical Implementation Details
 
-#### Mobile Navigation Code Structure
-```javascript
-// Hamburger menu functionality with error prevention
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-    });
-    
-    // Close menu on link click
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-        });
-    });
-}
+## 🔗 References
 
-# Changelog
+### Images
+- Party leadership images: Agang SA Media Archive
+- Community event photos: Unsplash
+- Campaign imagery: Original content
 
-## [Unreleased] - 2025-11-14
+### Code & Libraries
+- **Lightbox functionality**: Custom JavaScript implementation
+- **Form validation**: Vanilla JavaScript with custom validation classes
+- **Stripe JS**: Payment processing library (placeholder integration)
+- **Google Fonts**: Lexend Deca font family
 
-### Added
-- Initial commit of the project repository.
-- Added newspost HTML files:
-  - `campaign-launch.html`
-  - `community-outreach.html`
-  - `education-initiative.html`
-  - `healthcare-expansion.html`
-- Added supporting files:
-  - `news.html`
-  - `script.js`
-  - `styles.css`
-  - `Eugene_Makhukhule_WEDE5020w-POE-/` (embedded repository)
-
-### GitHub Actions
-- Repository initialized with `git init`.
-- Remote `origin` linked to `https://github.com/st10479846/Eugene_Makhukhule_WEDE5020w-POE-.git`.
-- Branch `main` created and pushed to GitHub.
-- Changes committed and pushed successfully.
-- Warnings noted for adding an embedded Git repository (`Eugene_Makhukhule_WEDE5020w-POE-`).
+### Tutorials & Resources
+- MDN Web Docs for JavaScript form validation
+- CSS-Tricks for responsive design patterns
+- W3Schools for HTML5 semantic elements
 
 ---
 
-### 2025-11-14
-- Added SEO meta tags and structured data to `index.html`
-- Improved mobile navigation and hamburger menu
-- Updated donation form validation and styling
-- Linked news articles to individual pages in `news-posts/`
-- Added robots.txt and sitemap.xml for SEO
-- Updated footer with newsletter and social links
-- Fixed typos and improved accessibility
+## 🎯 Project Requirements Met
+
+### ✅ Technical Implementation
+- External CSS stylesheet implemented across all pages
+- Comprehensive responsive design with media queries
+- Interactive elements with JavaScript
+- SEO optimization with meta tags and alt text
+- Form validation and user feedback
+
+### ✅ Functionality
+- Contact forms with validation
+- Image gallery with lightbox
+- Interactive Google Maps
+- News search functionality
+- Mobile-responsive navigation
+
+### ✅ Documentation
+- Complete README with project overview
+- Detailed changelog tracking development
+- References for all external resources
+- GitHub commits with descriptive messages
+
+---
 

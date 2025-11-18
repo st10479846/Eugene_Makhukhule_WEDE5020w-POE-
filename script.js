@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
     // ================================
-    // GENERIC FORM HANDLER CLASS
+    // FORM HANDLER CLASS WITH EMAIL FUNCTIONALITY
     // ================================
     class FormHandler {
         constructor(formId, options = {}) {
@@ -82,8 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!this.form) return;
 
             this.submitBtn = this.form.querySelector('button[type="submit"]');
+            this.submitText = this.submitBtn.querySelector('#submitText');
+            this.submitLoading = this.submitBtn.querySelector('#submitLoading');
             this.successMessage = options.successMessageId ? document.getElementById(options.successMessageId) : null;
-            this.fields = options.fields || []; // Array of {name, validate: fn, message}
+            this.formType = options.formType || 'contact'; // contact, volunteer, event, donation
+            this.fields = options.fields || [];
             this.isSubmitting = false;
 
             this.addEventListeners();
@@ -103,35 +106,73 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        handleSubmit(e) {
+        async handleSubmit(e) {
             e.preventDefault();
             if (this.isSubmitting) return;
 
             const valid = this.validateForm();
-            if (!valid) return alert('Please fix the errors in the form.');
-
-            this.isSubmitting = true;
-            this.submitBtn.disabled = true;
-
-            const formData = {};
-            this.fields.forEach(f => {
-                const field = this.form.querySelector(`[name="${f.name}"]`);
-                if (field) formData[f.name] = field.value.trim();
-            });
-
-            if (this.sendForm) this.sendForm(formData);
-
-            this.isSubmitting = false;
-            this.submitBtn.disabled = false;
-
-            if (this.successMessage) {
-                this.successMessage.style.display = 'block';
-                setTimeout(() => this.successMessage.style.display = 'none', 5000);
-            } else {
-                alert('Form submitted successfully!');
+            if (!valid) {
+                this.showError('Please fix the errors in the form.');
+                return;
             }
 
-            this.form.reset();
+            this.isSubmitting = true;
+            this.setLoadingState(true);
+
+            try {
+                const formData = new FormData(this.form);
+                const result = await this.sendForm(formData);
+                
+                if (result.success) {
+                    this.showSuccess('Message sent successfully! We\'ll get back to you soon.');
+                    this.form.reset();
+                } else {
+                    this.showError(result.message || 'Failed to send message. Please try again.');
+                }
+            } catch (error) {
+                this.showError('Network error. Please try again.');
+            } finally {
+                this.isSubmitting = false;
+                this.setLoadingState(false);
+            }
+        }
+
+        async sendForm(formData) {
+            // Formspree endpoint - you'll need to create a free account at formspree.io
+            let formspreeEndpoint = '';
+            
+            // Set different Formspree IDs for different forms
+            switch(this.formType) {
+                case 'contact':
+                    formspreeEndpoint = 'https://formspree.io/f/myzoyqgv'; // Replace with your actual Formspree ID
+                    break;
+                case 'volunteer':
+                    formspreeEndpoint = 'https://formspree.io/f/myzoyqgv'; // Replace with your actual Formspree ID
+                    break;
+                case 'event':
+                    formspreeEndpoint = 'https://formspree.io/f/myzoyqgv'; // Replace with your actual Formspree ID
+                    break;
+                case 'donation':
+                    formspreeEndpoint = 'https://formspree.io/f/myzoyqgv'; // Replace with your actual Formspree ID
+                    break;
+                default:
+                    formspreeEndpoint = 'https://formspree.io/f/myzoyqgv'; // Replace with your actual Formspree ID
+            }
+
+            const response = await fetch(formspreeEndpoint, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                return { success: true, message: 'Message sent successfully!' };
+            } else {
+                const errorData = await response.json();
+                return { success: false, message: errorData.error || 'Failed to send message' };
+            }
         }
 
         validateField(f, field) {
@@ -159,12 +200,53 @@ document.addEventListener('DOMContentLoaded', () => {
             const errorEl = field.parentElement.querySelector('.error-message');
             if (errorEl) errorEl.textContent = '';
         }
+
+        setLoadingState(loading) {
+            if (loading) {
+                this.submitBtn.disabled = true;
+                this.submitBtn.classList.add('loading');
+                if (this.submitText) this.submitText.style.display = 'none';
+                if (this.submitLoading) this.submitLoading.style.display = 'inline-flex';
+            } else {
+                this.submitBtn.disabled = false;
+                this.submitBtn.classList.remove('loading');
+                if (this.submitText) this.submitText.style.display = 'inline';
+                if (this.submitLoading) this.submitLoading.style.display = 'none';
+            }
+        }
+
+        showSuccess(message) {
+            if (this.successMessage) {
+                this.successMessage.textContent = message;
+                this.successMessage.style.display = 'block';
+                setTimeout(() => {
+                    this.successMessage.style.display = 'none';
+                }, 5000);
+            } else {
+                alert(message);
+            }
+        }
+
+        showError(message) {
+            if (this.successMessage) {
+                this.successMessage.textContent = message;
+                this.successMessage.style.color = '#e74c3c';
+                this.successMessage.style.display = 'block';
+                setTimeout(() => {
+                    this.successMessage.style.display = 'none';
+                    this.successMessage.style.color = '';
+                }, 5000);
+            } else {
+                alert(message);
+            }
+        }
     }
 
     // ================================
     // CONTACT FORM
     // ================================
     new FormHandler('contactForm', {
+        formType: 'contact',
         successMessageId: 'successMessage',
         fields: [
             {name:'name', validate: v=>v.length>=2, message:'Enter at least 2 characters'},
@@ -179,42 +261,45 @@ document.addEventListener('DOMContentLoaded', () => {
     // VOLUNTEER FORM
     // ================================
     new FormHandler('volunteerForm', {
+        formType: 'volunteer',
         successMessageId: 'volunteerSuccess',
         fields: [
-            {name:'volName', validate:v=>v.length>=2, message:'Enter full name'},
-            {name:'volEmail', validate:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), message:'Invalid email'},
-            {name:'volPhone', validate:v=>/^0\d{9}$/.test(v), message:'Invalid phone number'},
-            {name:'volInterest', validate:v=>v.length>0, message:'Select interest area'}
+            {name:'name', validate:v=>v.length>=2, message:'Enter full name'},
+            {name:'email', validate:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), message:'Invalid email'},
+            {name:'phone', validate:v=>/^0\d{9}$/.test(v), message:'Invalid phone number'},
+            {name:'interest', validate:v=>v.length>0, message:'Select interest area'}
         ]
     });
 
     // ================================
     // EVENT FORM
     // ================================
-    new FormHandler('eventForm', {
+    new FormHandler('ward-event-form', {
+        formType: 'event',
         successMessageId: 'eventSuccess',
         fields: [
-            {name:'eventName', validate:v=>v.length>=2, message:'Enter full name'},
-            {name:'eventEmail', validate:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), message:'Invalid email'},
-            {name:'eventPhone', validate:v=>/^0\d{9}$/.test(v), message:'Invalid phone number'},
-            {name:'eventType', validate:v=>v.length>0, message:'Select event type'}
+            {name:'name', validate:v=>v.length>=2, message:'Enter full name'},
+            {name:'email', validate:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), message:'Invalid email'},
+            {name:'phone', validate:v=>/^0\d{9}$/.test(v), message:'Invalid phone number'},
+            {name:'province', validate:v=>v.length>0, message:'Select province'}
         ]
     });
 
     // ================================
-    // DONATION FORM (Stripe placeholder)
+    // DONATION FORM
     // ================================
-    new FormHandler('donationForm', {
+    new FormHandler('donation-form', {
+        formType: 'donation',
         successMessageId: 'donationSuccess',
         fields: [
-            {name:'donorName', validate:v=>v.length>=2, message:'Enter your name'},
-            {name:'donorEmail', validate:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), message:'Invalid email'},
-            {name:'donationAmount', validate:v=>parseFloat(v)>0, message:'Enter valid amount'}
+            {name:'name', validate:v=>v.length>=2, message:'Enter your name'},
+            {name:'email', validate:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), message:'Invalid email'},
+            {name:'amount', validate:v=>parseFloat(v)>0, message:'Enter valid amount'}
         ]
     });
 
-    // Stripe integration placeholder: You can replace this with your Stripe checkout code
-    const donationForm = document.getElementById('donationForm');
+    // Stripe integration placeholder
+    const donationForm = document.getElementById('donation-form');
     if (donationForm) {
         donationForm.addEventListener('submit', e=>{
             e.preventDefault();
